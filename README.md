@@ -1,5 +1,6 @@
 # odm_scorecards
 Asset to extend IBM ODM to support scorecards tables.
+A Word document with instructions for usage is included in the repository
 
 This asset is for customer woh ask about scorecards.
 Scorecards have been deprecated in the product. 
