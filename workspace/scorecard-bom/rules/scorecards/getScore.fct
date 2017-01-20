@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.rule:Function xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.rule="http://ilog.rules.studio/model/rule.ecore">
+  <name>getScore</name>
+  <uuid>13441b59-48ea-4684-8021-e8653bc93d52</uuid>
+  <returnType>java.lang.Double</returnType>
+  <definition><![CDATA[Object obj = scorecards_scores.get(scorecardName);
+if(obj==null || !(obj instanceof Double)) {
+	return 0;
+}
+
+return ((Double)obj);
+]]></definition>
+  <imports>use scorecards_scores;</imports>
+  <arguments name="scorecardName" type="java.lang.String"/>
+</ilog.rules.studio.model.rule:Function>

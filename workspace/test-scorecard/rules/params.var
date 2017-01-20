@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>params</name>
+  <uuid>5303fdc0-05fa-4661-bbbf-ca6024afdcf4</uuid>
+  <variables name="customer" type="com.ibm.test.Customer" initialValue="null" verbalization="the customer"/>
+</ilog.rules.studio.model.base:VariableSet>

@@ -1,0 +1,12 @@
+package scorecards {
+function void addScore(java.lang.String ruleName, double score) {
+String scname = scorecards.getScorecardNameFromPackage(ruleName);
+if(scname!=null && !scname.equals("")) {
+	double currentScore = scorecards.getScore(scname);
+	scorecards.setScore(scname,currentScore+score);
+}
+
+
+
+}
+}

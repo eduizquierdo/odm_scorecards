@@ -1,0 +1,12 @@
+package scorecards {
+import java.util.ArrayList;
+
+function void addReason(java.lang.String ruleName, java.lang.String reason) {
+String scname = scorecards.getScorecardNameFromPackage(ruleName);
+if(scname!=null && !scname.equals("")) {
+	ArrayList reasons = scorecards.getReasons(scname);
+	reasons.add(reason);
+}
+
+}
+}

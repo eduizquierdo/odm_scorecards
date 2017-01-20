@@ -1,0 +1,11 @@
+# Vocabulary Properties
+uuid = d1c80271-db51-41c5-80aa-841f1b8f902a
+
+# scorecardbom.ScorecardsUtil
+scorecardbom.ScorecardsUtil#concept.label = scorecards util
+scorecardbom.ScorecardsUtil.addReason(java.lang.String)#phrase.action = add to the scorecard the reason: {0}
+scorecardbom.ScorecardsUtil.addScore(double)#phrase.action = add {0, <points>} to the scorecard
+scorecardbom.ScorecardsUtil.addScore(double,double,double)#phrase.action = add {0, <points>} to the scorecard, weight: {1, <weight [0-1]>}, maxScore: {2, <max score>}
+scorecardbom.ScorecardsUtil.getReasons(java.lang.String)#phrase.navigation = the reasons of the scorecard {0, <socrecard name>}
+scorecardbom.ScorecardsUtil.getScore(java.lang.String)#phrase.navigation = the score of {0, <score card name>}
+scorecardbom.ScorecardsUtil.resetScorecards()#phrase.action = reset all scores

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>scorecards</name>
+  <uuid>f73b4827-850e-4f0b-b812-d38a1a702848</uuid>
+  <variables name="scorecards_scores" type="java.util.HashMap" initialValue="null" verbalization=""/>
+  <variables name="scorecards_reasons" type="java.util.HashMap" initialValue="null" verbalization=""/>
+</ilog.rules.studio.model.base:VariableSet>

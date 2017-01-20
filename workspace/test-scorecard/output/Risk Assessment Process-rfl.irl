@@ -1,0 +1,42 @@
+
+flowtask Risk_Assessment_Process {
+  property mainflowtask = false;
+  property ilog.rules.business_name = "Risk Assessment Process";
+  property ilog.rules.package_name = "";
+  initialaction {
+    scorecardbom.ScorecardsUtil.resetScorecards();
+  };
+  finalaction {
+    ilog.rules.brl.System.printMessage(("risk score: " + scorecardbom.ScorecardsUtil.getScore("My_Risk_Scorecard")));foreach (java.lang.String var$_$0 in scorecardbom.ScorecardsUtil.getReasons("My_Risk_Scorecard")) {   ilog.rules.brl.System.printMessage(("  - " + var$_$0));}ilog.rules.brl.System.printMessage(("fraud score: " + scorecardbom.ScorecardsUtil.getScore("My_Fraud_Scorecard")));foreach (java.lang.String var$_$1 in scorecardbom.ScorecardsUtil.getReasons("My_Fraud_Scorecard")) {   ilog.rules.brl.System.printMessage(("  - " + var$_$1));}
+  };
+  body {
+    Risk_Assessment_Process#Scoring;
+    Risk_Assessment_Process#Decision;
+  }
+};
+
+ruletask Risk_Assessment_Process#Scoring {
+  property ilog.rules.business_name = "Risk Assessment Process>Scoring";
+  property ilog.rules.package_name = "";
+  algorithm = sequential;
+  property ilog.rules.engine.sequential.fastpath = true;
+  ordering = sorted;
+  body {
+    Scoring.*,
+    Scoring.My_Fraud_Scorecard.*,
+    Scoring.My_Risk_Scorecard.*
+
+  }
+};
+
+ruletask Risk_Assessment_Process#Decision {
+  property ilog.rules.business_name = "Risk Assessment Process>Decision";
+  property ilog.rules.package_name = "";
+  algorithm = sequential;
+  property ilog.rules.engine.sequential.fastpath = true;
+  ordering = sorted;
+  body {
+    Decision.*
+  }
+};
+

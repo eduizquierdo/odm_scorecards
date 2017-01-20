@@ -1,0 +1,17 @@
+package scorecards {
+use scorecards_scores;
+import java.util.ArrayList;
+use scorecards_reasons;
+
+function java.util.ArrayList getReasons(java.lang.String scorecardName) {
+Object obj = scorecards_reasons.get(scorecardName);
+if(obj==null || !(obj instanceof ArrayList)) {
+	obj = new ArrayList();
+	scorecards_reasons.put(scorecardName,obj);
+}
+
+return ((ArrayList)obj);
+
+
+}
+}

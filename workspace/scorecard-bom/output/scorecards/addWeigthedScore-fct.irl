@@ -1,0 +1,21 @@
+package scorecards {
+function void addWeigthedScore(java.lang.String ruleName, double score, double weight, double maxScore) {
+String scname = scorecards.getScorecardNameFromPackage(ruleName);
+double computedScore = 0;
+if(scname!=null && !scname.equals("")) {
+	double currentScore = scorecards.getScore(scname);
+	// if weight is not in [0-1] we don'r weight the score (use weight 1)
+	if(weight < 0.0 || weight>1.0) { weight = 1.0; }
+	computedScore = currentScore + score * weight;
+	
+	// if maxScore is not 0 we limit the max score
+	if(maxScore > 0  && computedScore > maxScore) {
+		computedScore = maxScore;
+	}
+	scorecards.setScore(scname,computedScore);
+}
+
+
+
+}
+}

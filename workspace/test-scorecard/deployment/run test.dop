@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="run_test" usingRuleflow="true" ruleflowName="Risk Assessment Process" targetRuleProjectName="test-scorecard">
+  <name>run test</name>
+  <uuid>c1c55a7e-c684-45c9-b494-e363c00d188f</uuid>
+  <referencedVariables variableName="customer" variableSetName="params" direction="IN_OUT">
+    <variableSet href="../rules/params.var#5303fdc0-05fa-4661-bbbf-ca6024afdcf4"/>
+  </referencedVariables>
+  <ruleflow href="../rules/Risk%20Assessment%20Process.rfl#4e5771b3-38d2-4f9c-bd5e-d421269009a5"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="run test_extractor" validator="Default Validator"/>
+  <targetRuleProject href="../../test-scorecard#76e24220-a5e3-45c2-b93a-9dcf951b33b6"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.rule:Function xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.rule="http://ilog.rules.studio/model/rule.ecore">
+  <name>addScore</name>
+  <uuid>5b40becb-8206-48a3-92a7-7d789fee1584</uuid>
+  <definition><![CDATA[String scname = scorecards.getScorecardNameFromPackage(ruleName);
+if(scname!=null && !scname.equals("")) {
+	double currentScore = scorecards.getScore(scname);
+	scorecards.setScore(scname,currentScore+score);
+}
+
+
+]]></definition>
+  <arguments name="ruleName" type="java.lang.String"/>
+  <arguments name="score" type="double"/>
+</ilog.rules.studio.model.rule:Function>

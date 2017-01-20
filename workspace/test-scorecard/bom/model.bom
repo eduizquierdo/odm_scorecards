@@ -1,0 +1,30 @@
+
+property loadGetterSetterAsProperties "true"
+property origin "xom:/test-scorecard//test-xom"
+property uuid "84192c80-f72a-4881-a71e-d0fede45b036"
+package com.ibm.test;
+
+
+public class Customer
+{
+
+    static public final class Category
+            extends java.lang.Enum
+    {
+        domain {static VIP, static STD}
+        public static final readonly com.ibm.test.Customer.Category STD;
+        public static final readonly com.ibm.test.Customer.Category VIP;
+        public static com.ibm.test.Customer.Category valueOf(string arg);
+        public static com.ibm.test.Customer.Category[] values();
+    }
+    public int age;
+    public double balance;
+    public com.ibm.test.Customer.Category category;
+    public string message;
+    public string name;
+    public double score;
+    public Customer();
+    public void addMessage(string arg);
+    public static com.ibm.test.Customer crearDatosPrueba();
+}
+

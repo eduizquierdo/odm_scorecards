@@ -1,0 +1,4 @@
+variables {
+  java.util.HashMap scorecards_scores = null;
+  java.util.HashMap scorecards_reasons = null;
+}

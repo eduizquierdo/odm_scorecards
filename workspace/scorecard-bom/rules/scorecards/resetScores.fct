@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.rule:Function xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.rule="http://ilog.rules.studio/model/rule.ecore">
+  <name>resetScores</name>
+  <uuid>a188c647-da76-4f0b-9105-dc7e03474f48</uuid>
+  <definition><![CDATA[scorecards_scores = new HashMap();
+scorecards_reasons = new HashMap();
+
+
+
+]]></definition>
+  <imports>use scorecards_scores;</imports>
+  <imports>import java.util.HashMap;</imports>
+  <imports>use scorecards_reasons;</imports>
+</ilog.rules.studio.model.rule:Function>

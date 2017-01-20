@@ -1,0 +1,80 @@
+<b2x:translation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://schemas.ilog.com/JRules/1.1/Translation ilog/rules/schemas/1_1/b2x.xsd"
+        xmlns:b2x="http://schemas.ilog.com/JRules/1.1/Translation">
+    <id>cc4925e7-e52e-478c-9776-0f7b172e8f0f</id>
+    <class>
+        <businessName>scorecardbom.ScorecardsUtil</businessName>
+        <executionName>java.lang.Object</executionName>
+        <import>java.util.ArrayList</import>
+        <import>java.util.Collection</import>
+        <method>
+            <name>addReason</name>
+            <parameter type="java.lang.String"/>
+            <body language="irl"><![CDATA[
+            Object[] parameters = new Object[2];
+parameters[0]= instance.ruleName;
+parameters[1]= reason;
+context.invokeFunction("scorecards.addReason", parameters);
+            ]]></body>
+        </method>
+        <method>
+            <name>addScore</name>
+            <parameter type="double"/>
+            <body language="irl"><![CDATA[
+            Object[] parameters = new Object[2];
+parameters[0]= instance.ruleName;
+parameters[1]= score;
+context.invokeFunction("scorecards.addScore", parameters);
+            ]]></body>
+        </method>
+        <method>
+            <name>addScore</name>
+            <parameter type="double"/>
+            <parameter type="double"/>
+            <parameter type="double"/>
+            <body language="irl"><![CDATA[
+            Object[] parameters = new Object[4];
+parameters[0]= instance.ruleName;
+parameters[1]= score;
+parameters[2]= weight;
+parameters[3]= maxScore;
+context.invokeFunction("scorecards.addWeigthedScore", parameters);
+            ]]></body>
+        </method>
+        <method>
+            <name>getReasons</name>
+            <parameter type="java.lang.String"/>
+            <body language="irl"><![CDATA[
+            Object[] parameters = new Object[1];
+parameters[0]= scorecardName;
+Object obj  = context.invokeFunction("scorecards.getReasons", parameters);
+String[] defaultAnswer = new String[0];
+
+if(obj!=null && obj instanceof Collection) {
+	Collection col = (Collection)obj;
+	return (String[])col.toArray(defaultAnswer);
+} else {
+	return defaultAnswer;
+}
+            ]]></body>
+        </method>
+        <method>
+            <name>getScore</name>
+            <parameter type="java.lang.String"/>
+            <body language="irl"><![CDATA[
+            Object[] parameters = new Object[1];
+parameters[0]= scorecardName;
+Double score = (Double) context.invokeFunction("scorecards.getScore", parameters);
+if(score != null) return score.doubleValue();
+else return 0;
+            ]]></body>
+        </method>
+        <method>
+            <name>resetScorecards</name>
+            <body language="irl"><![CDATA[
+            Object[] parameters = new Object[0];
+context.invokeFunction("scorecards.resetScores", parameters );
+            ]]></body>
+        </method>
+    </class>
+</b2x:translation>

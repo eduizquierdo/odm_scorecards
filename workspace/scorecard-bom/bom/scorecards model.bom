@@ -1,0 +1,15 @@
+
+property uuid "758224aa-7fc6-428c-a7db-e5c62046b8af"
+package scorecardbom;
+
+
+public class ScorecardsUtil
+{
+    public static void addReason(string reason);
+    public static void addScore(double score);
+    public static void addScore(double score, double weight, double maxScore);
+    public static java.lang.String[] getReasons(string scorecardName);
+    public static double getScore(string scorecardName);
+    public static void resetScorecards();
+}
+

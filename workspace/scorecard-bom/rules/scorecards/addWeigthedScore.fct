@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.rule:Function xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.rule="http://ilog.rules.studio/model/rule.ecore">
+  <name>addWeigthedScore</name>
+  <uuid>f81d942b-f97c-4f6e-be71-31bd2b1d40c7</uuid>
+  <definition><![CDATA[String scname = scorecards.getScorecardNameFromPackage(ruleName);
+double computedScore = 0;
+if(scname!=null && !scname.equals("")) {
+	double currentScore = scorecards.getScore(scname);
+	// if weight is not in [0-1] we don'r weight the score (use weight 1)
+	if(weight < 0.0 || weight>1.0) { weight = 1.0; }
+	computedScore = currentScore + score * weight;
+	
+	// if maxScore is not 0 we limit the max score
+	if(maxScore > 0  && computedScore > maxScore) {
+		computedScore = maxScore;
+	}
+	scorecards.setScore(scname,computedScore);
+}
+
+
+]]></definition>
+  <arguments name="ruleName" type="java.lang.String"/>
+  <arguments name="score" type="double"/>
+  <arguments name="weight" type="double"/>
+  <arguments name="maxScore" type="double"/>
+</ilog.rules.studio.model.rule:Function>

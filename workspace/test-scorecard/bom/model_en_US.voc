@@ -1,0 +1,19 @@
+# Vocabulary Properties
+uuid = 103039e3-4541-44c2-9675-c1dea92baf68
+
+# com.ibm.test.Customer
+com.ibm.test.Customer#concept.label = customer
+
+# com.ibm.test.Customer.Category
+com.ibm.test.Customer.Category#concept.label = category
+com.ibm.test.Customer.Category.STD#instance.label = STD
+com.ibm.test.Customer.Category.VIP#instance.label = VIP
+com.ibm.test.Customer.Category.valueOf(java.lang.String)#phrase.navigation = category.valueOf({0})
+com.ibm.test.Customer.Category.values()#phrase.navigation = category.values()
+com.ibm.test.Customer.addMessage(java.lang.String)#phrase.action = add {0} to the messages of {this}
+com.ibm.test.Customer.age#phrase.navigation = {age} of {this}
+com.ibm.test.Customer.balance#phrase.navigation = {balance} of {this}
+com.ibm.test.Customer.category#phrase.navigation = {category} of {this}
+com.ibm.test.Customer.message#phrase.navigation = {message} of {this}
+com.ibm.test.Customer.name#phrase.navigation = {name} of {this}
+com.ibm.test.Customer.score#phrase.navigation = {score} of {this}

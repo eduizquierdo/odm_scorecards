@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.rule:Function xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.rule="http://ilog.rules.studio/model/rule.ecore">
+  <name>setScore</name>
+  <uuid>e894ebc6-a11f-44f5-9560-d6dabd5adccf</uuid>
+  <definition><![CDATA[scorecards_scores.put(scorecardName,new Double(score));
+]]></definition>
+  <imports>use scorecards_scores;</imports>
+  <arguments name="scorecardName" type="java.lang.String"/>
+  <arguments name="score" type="double"/>
+</ilog.rules.studio.model.rule:Function>

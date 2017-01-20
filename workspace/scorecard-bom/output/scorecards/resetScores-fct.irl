@@ -1,0 +1,14 @@
+package scorecards {
+use scorecards_scores;
+import java.util.HashMap;
+use scorecards_reasons;
+
+function void resetScores() {
+scorecards_scores = new HashMap();
+scorecards_reasons = new HashMap();
+
+
+
+
+}
+}

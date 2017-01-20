@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Language Reference</name>
+  <uuid>1bc5f415-6b39-4a1e-8236-93cfe038bf89</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	 the score of "My_Scorecard" is more than 100
+and  the reasons of the scorecard "My_Scorecard" contain "YOUNG CUSTOMER"  
+then
+	add 99 to the scorecard ; 
+	add 99 to the scorecard , weight: 0.75 , maxScore: 150 ; 
+	add to the scorecard the reason: "YOUNG CUSTOMER";
+	reset all scores;
+	
+	]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

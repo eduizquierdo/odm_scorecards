@@ -1,0 +1,17 @@
+package Decision {
+   use customer;
+   rule Final_Decision {
+      property ilog.rules.business_name = "Final Decision";
+      property ilog.rules.package_name = "Decision";
+      property status = "new";
+      when {
+         IlrContext() from ?context;
+         evaluate (scorecardbom.ScorecardsUtil.getScore("My_Risk_Scorecard") > 120);
+      } then {
+         customer.addMessage("NOT ACCEPTED");
+      } else {
+         customer.addMessage("ACCEPTED");
+      }
+   }
+}
+

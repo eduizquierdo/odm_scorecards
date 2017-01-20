@@ -1,0 +1,17 @@
+package scorecards {
+function java.lang.String getScorecardNameFromPackage(java.lang.String packageName) {
+String scname=packageName;
+// the rulename is removed
+scname = scname.substring(0,scname.lastIndexOf('.'));
+
+// get the inner package name
+int index = scname.lastIndexOf('.');
+if(index!=-1) {
+	scname = scname.substring(index+1);
+}
+
+return scname;
+
+
+}
+}

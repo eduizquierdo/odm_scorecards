@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.rule:Function xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.rule="http://ilog.rules.studio/model/rule.ecore">
+  <name>getReasons</name>
+  <uuid>fdccfba1-ab8c-422a-9f6a-3b916cc0b5cc</uuid>
+  <returnType>java.util.ArrayList</returnType>
+  <definition><![CDATA[Object obj = scorecards_reasons.get(scorecardName);
+if(obj==null || !(obj instanceof ArrayList)) {
+	obj = new ArrayList();
+	scorecards_reasons.put(scorecardName,obj);
+}
+
+return ((ArrayList)obj);
+
+]]></definition>
+  <imports>use scorecards_scores;</imports>
+  <imports>import java.util.ArrayList;</imports>
+  <imports>use scorecards_reasons;</imports>
+  <arguments name="scorecardName" type="java.lang.String"/>
+</ilog.rules.studio.model.rule:Function>

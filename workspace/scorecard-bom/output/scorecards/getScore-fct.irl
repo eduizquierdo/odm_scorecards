@@ -1,0 +1,13 @@
+package scorecards {
+use scorecards_scores;
+
+function java.lang.Double getScore(java.lang.String scorecardName) {
+Object obj = scorecards_scores.get(scorecardName);
+if(obj==null || !(obj instanceof Double)) {
+	return 0;
+}
+
+return ((Double)obj);
+
+}
+}

@@ -1,0 +1,115 @@
+// begin DT Scorecard Table
+// -- begin rule 'Scorecard Table 0'
+package Scoring.My_Fraud_Scorecard {
+   use customer;
+   rule Scorecard_Table_0 {
+      property ilog.rules.business_name = "Scorecard Table 1";
+      property ilog.rules.dt = "Scoring.My Fraud Scorecard.Scorecard Table";
+      property ilog.rules.group = "Scoring.My_Fraud_Scorecard.Scorecard_Table";
+      property ilog.rules.package_name = "Scoring.My Fraud Scorecard";
+      property status = "new";
+      when {
+         IlrContext() from ?context;
+         evaluate (weight : (0.75d));
+         evaluate (maxScore : (120));
+         com.ibm.test.Customer() from customer;
+         evaluate ((((customer.category.equals(com.ibm.test.Customer.Category.STD)))));
+      } then {
+         scorecardbom.ScorecardsUtil.addScore(35, weight, (double) maxScore );
+         scorecardbom.ScorecardsUtil.addReason("STANDARD CUSTOMER");
+      }
+   }
+}
+
+// -- end rule 'Scorecard Table 0'
+// -- begin rule 'Scorecard Table 1'
+package Scoring.My_Fraud_Scorecard {
+   use customer;
+   rule Scorecard_Table_1 {
+      property ilog.rules.business_name = "Scorecard Table 2";
+      property ilog.rules.dt = "Scoring.My Fraud Scorecard.Scorecard Table";
+      property ilog.rules.group = "Scoring.My_Fraud_Scorecard.Scorecard_Table";
+      property ilog.rules.package_name = "Scoring.My Fraud Scorecard";
+      property status = "new";
+      when {
+         IlrContext() from ?context;
+         evaluate (weight : (0.75d));
+         evaluate (maxScore : (120));
+         com.ibm.test.Customer() from customer;
+         evaluate ((((customer.category.equals(com.ibm.test.Customer.Category.VIP)))));
+      } then {
+         scorecardbom.ScorecardsUtil.addScore(55, weight, (double) maxScore );
+      }
+   }
+}
+
+// -- end rule 'Scorecard Table 1'
+// -- begin rule 'Scorecard Table 2'
+package Scoring.My_Fraud_Scorecard {
+   use customer;
+   rule Scorecard_Table_2 {
+      property ilog.rules.business_name = "Scorecard Table 3";
+      property ilog.rules.dt = "Scoring.My Fraud Scorecard.Scorecard Table";
+      property ilog.rules.group = "Scoring.My_Fraud_Scorecard.Scorecard_Table";
+      property ilog.rules.package_name = "Scoring.My Fraud Scorecard";
+      property status = "new";
+      when {
+         IlrContext() from ?context;
+         evaluate (weight : (0.75d));
+         evaluate (maxScore : (120));
+         com.ibm.test.Customer() from customer;
+         evaluate (((customer.balance <= 9000)));
+      } then {
+         scorecardbom.ScorecardsUtil.addScore(85, weight, (double) maxScore );
+         scorecardbom.ScorecardsUtil.addReason("FEW CASH");
+      }
+   }
+}
+
+// -- end rule 'Scorecard Table 2'
+// -- begin rule 'Scorecard Table 3'
+package Scoring.My_Fraud_Scorecard {
+   use customer;
+   rule Scorecard_Table_3 {
+      property ilog.rules.business_name = "Scorecard Table 4";
+      property ilog.rules.dt = "Scoring.My Fraud Scorecard.Scorecard Table";
+      property ilog.rules.group = "Scoring.My_Fraud_Scorecard.Scorecard_Table";
+      property ilog.rules.package_name = "Scoring.My Fraud Scorecard";
+      property status = "new";
+      when {
+         IlrContext() from ?context;
+         evaluate (weight : (0.75d));
+         evaluate (maxScore : (120));
+         com.ibm.test.Customer() from customer;
+         evaluate (((customer.balance in ]9000.0d, 55000.0d])));
+      } then {
+         scorecardbom.ScorecardsUtil.addScore(70, weight, (double) maxScore );
+         scorecardbom.ScorecardsUtil.addReason("MEDIUM CASH");
+      }
+   }
+}
+
+// -- end rule 'Scorecard Table 3'
+// -- begin rule 'Scorecard Table 4'
+package Scoring.My_Fraud_Scorecard {
+   use customer;
+   rule Scorecard_Table_4 {
+      property ilog.rules.business_name = "Scorecard Table 5";
+      property ilog.rules.dt = "Scoring.My Fraud Scorecard.Scorecard Table";
+      property ilog.rules.group = "Scoring.My_Fraud_Scorecard.Scorecard_Table";
+      property ilog.rules.package_name = "Scoring.My Fraud Scorecard";
+      property status = "new";
+      when {
+         IlrContext() from ?context;
+         evaluate (weight : (0.75d));
+         evaluate (maxScore : (120));
+         com.ibm.test.Customer() from customer;
+         evaluate (((customer.balance > 55000)));
+      } then {
+         scorecardbom.ScorecardsUtil.addScore(45, weight, (double) maxScore );
+      }
+   }
+}
+
+// -- end rule 'Scorecard Table 4'
+// end DT Scorecard Table

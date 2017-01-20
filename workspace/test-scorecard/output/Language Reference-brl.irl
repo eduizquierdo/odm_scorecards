@@ -1,0 +1,16 @@
+rule Language_Reference {
+   property ilog.rules.business_name = "Language Reference";
+   property ilog.rules.package_name = "";
+   property status = "new";
+   when {
+      IlrContext() from ?context;
+      evaluate ((scorecardbom.ScorecardsUtil.getScore("My_Scorecard") > 100
+      	&& "YOUNG CUSTOMER" in scorecardbom.ScorecardsUtil.getReasons("My_Scorecard")));
+   } then {
+      scorecardbom.ScorecardsUtil.addScore(99);
+      scorecardbom.ScorecardsUtil.addScore(99, 0.75d, 150);
+      scorecardbom.ScorecardsUtil.addReason("YOUNG CUSTOMER");
+      scorecardbom.ScorecardsUtil.resetScorecards();
+   }
+}
+

@@ -1,0 +1,8 @@
+package scorecards {
+use scorecards_scores;
+
+function void setScore(java.lang.String scorecardName, double score) {
+scorecards_scores.put(scorecardName,new Double(score));
+
+}
+}

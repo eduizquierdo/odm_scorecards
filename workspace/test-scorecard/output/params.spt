@@ -1,0 +1,3 @@
+ilog.rules.engine.IlrParameterMap map = new ilog.rules.engine.IlrParameterMap();
+map.setParameter("customer", get_customer_value());
+?context.setParameters(map);

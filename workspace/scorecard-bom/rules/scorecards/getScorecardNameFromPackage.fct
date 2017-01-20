@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.rule:Function xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.rule="http://ilog.rules.studio/model/rule.ecore">
+  <name>getScorecardNameFromPackage</name>
+  <uuid>c085917d-c463-4168-8c95-260cf95b8c04</uuid>
+  <returnType>java.lang.String</returnType>
+  <definition><![CDATA[String scname=packageName;
+// the rulename is removed
+scname = scname.substring(0,scname.lastIndexOf('.'));
+
+// get the inner package name
+int index = scname.lastIndexOf('.');
+if(index!=-1) {
+	scname = scname.substring(index+1);
+}
+
+return scname;
+
+]]></definition>
+  <arguments name="packageName" type="java.lang.String"/>
+</ilog.rules.studio.model.rule:Function>

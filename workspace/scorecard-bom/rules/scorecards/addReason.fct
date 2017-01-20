@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.rule:Function xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.rule="http://ilog.rules.studio/model/rule.ecore">
+  <name>addReason</name>
+  <uuid>3a064eef-a2b2-4000-b920-ac55480ef883</uuid>
+  <definition><![CDATA[String scname = scorecards.getScorecardNameFromPackage(ruleName);
+if(scname!=null && !scname.equals("")) {
+	ArrayList reasons = scorecards.getReasons(scname);
+	reasons.add(reason);
+}
+]]></definition>
+  <imports>import java.util.ArrayList;</imports>
+  <arguments name="ruleName" type="java.lang.String"/>
+  <arguments name="reason" type="java.lang.String"/>
+</ilog.rules.studio.model.rule:Function>
